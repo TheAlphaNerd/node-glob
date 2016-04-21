@@ -66,7 +66,6 @@ function setopts (self, pattern, options) {
   self.pattern = pattern
   self.strict = options.strict !== false
   self.realpath = !!options.realpath
-  self.realpathCache = options.realpathCache || Object.create(null)
   self.follow = !!options.follow
   self.dot = !!options.dot
   self.mark = !!options.mark

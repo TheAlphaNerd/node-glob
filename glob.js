@@ -232,7 +232,7 @@ Glob.prototype._realpathSet = function (index, cb) {
     // one or more of the links in the realpath couldn't be
     // resolved.  just return the abs value in that case.
     p = self._makeAbs(p)
-    fs.realpath(p, self.realpathCache, function (er, real) {
+    fs.realpath(p, function (er, real) {
       if (!er)
         set[real] = true
       else if (er.syscall === 'stat')

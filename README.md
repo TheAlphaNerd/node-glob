@@ -170,9 +170,6 @@ be immediately available on the `g.found` member.
   path multiple times.
 * `symlinks` A record of which paths are symbolic links, which is
   relevant in resolving `**` patterns.
-* `realpathCache` An optional object which is passed to `fs.realpath`
-  to minimize unnecessary syscalls.  It is stored on the instantiated
-  Glob object, and may be re-used.
 
 ### Events
 
@@ -205,7 +202,7 @@ All options are added to the Glob object, as well.
 If you are running many `glob` operations, you can pass a Glob object
 as the `options` argument to a subsequent operation to shortcut some
 `stat` and `readdir` calls.  At the very least, you may pass in shared
-`symlinks`, `statCache`, `realpathCache`, and `cache` options, so that
+`symlinks`, `statCache`, and `cache` options, so that
 parallel glob operations will be sped up by sharing information about
 the filesystem.
 
